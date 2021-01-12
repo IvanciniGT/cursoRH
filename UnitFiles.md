@@ -140,10 +140,13 @@ Especifica una lista de unidades que se instalarán o desinstalarán junto con l
 
 ## Ejemplo de fichero
 [Unit]
+
 Description=service_description
+
 After=network.target httpd.service
 
 [Service]
+
 ExecStart=path_to_executable
 
 ExecReload=path_to_executable
@@ -161,4 +164,5 @@ Restart=on-failure
 RestartSec=42s
 
 [Install]
+
 WantedBy=default.target
