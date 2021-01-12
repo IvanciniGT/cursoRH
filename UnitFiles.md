@@ -145,12 +145,19 @@ After=network.target httpd.service
 
 [Service]
 ExecStart=path_to_executable
+
 ExecReload=path_to_executable
+
 ExecStop=path_to_executable
+
 Type=forking
+
 PIDFile=path_to_pidfile
+
 KillMode=process
+
 Restart=on-failure
+
 RestartSec=42s
 
 [Install]
