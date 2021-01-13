@@ -1,0 +1,19 @@
+[Unit]
+
+Description=service_description
+Requires=network.target docker.service
+
+[Service]
+User=root
+ExecStart=/home/usuario/scripts/contenedor.sh --start -c /home/usuario/scripts/mi_nginx.conf
+ExecStop=/home/usuario/scripts/contenedor.sh -S -c /home/usuario/scripts/mi_nginx.conf
+ExecReload=/home/usuario/scripts/contenedor.sh -r -c /home/usuario/scripts/mi_nginx.conf
+Type=forking
+RemainAfterExit=True
+KillMode=process
+Restart=on-failure
+RestartSec=60s
+
+[Install]
+
+WantedBy=default.target
