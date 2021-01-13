@@ -335,8 +335,8 @@ $ firewall-cmd --zone = external --remove-masquerade --permanent
 ```
 ### Reenvio de puertos
 ```
-$ firewall-cmd --add-forward-port = puerto = número de puerto: proto = tcp | udp | sctp | dccp: toport = número de puerto
-$ firewall-cmd --remove-forward-port = puerto = número de puerto: proto = <tcp | udp>: toport = número de puerto: toaddr = <IP>
+$ firewall-cmd --add-forward-port=port=número de puerto:proto=tcp|udp|sctp|dccp:toport=número de puerto
+$ firewall-cmd --remove-forward-port=port=número de puerto:proto= <tcp|udp>:toport=número de puerto:toaddr=<IP>
 
 ```
 
