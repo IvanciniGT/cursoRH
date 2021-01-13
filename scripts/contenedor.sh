@@ -232,3 +232,4 @@ elif [[ $funcion_a_ejecutar == "parada_del_contenedor" ]];then
 fi
 
 ### sudo ./contenedor.sh -S -c mi_nginx.conf
+### sudo ./contenedor.sh -s -c mi_nginx.conf
