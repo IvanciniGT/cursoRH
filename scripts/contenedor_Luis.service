@@ -1,0 +1,19 @@
+[Unit]
+
+Description=service_description
+Requires=network.target docker.service
+
+[Service]
+User=root
+ExecStart=/home/luiyi/Escritorio/Scripts/contenedor.sh --start -c /home/luiyi/Escritorio/Scripts/nginx_container_conf
+ExecStop=/home/luiyi/Escritorio/Scripts/contenedor.sh -S -c /home/luiyi/Escritorio/Scripts/nginx_container_conf
+ExecReload=/home/luiyi/Escritorio/Scripts/contenedor.sh -r -c /home/luiyi/Escritorio/Scripts/nginx_container_conf
+Type=forking
+RemainAfterExit=True
+KillMode=process
+Restart=on-failure
+RestartSec=60s
+
+[Install]
+
+WantedBy=default.target
