@@ -1,0 +1,8 @@
+nombre_contenedor=mi_nginx
+imagen_contenedor=nginx
+carpeta_volumen=/datos/nginx
+punto_montaje=/datos
+# Si hubiera varios puertos se separarían mediante espacios.
+# Ejemplo: 80:8080 90:9090
+puerto=80:8080
+carpeta_backup=/datos/backups/nginx
