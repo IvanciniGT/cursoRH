@@ -92,11 +92,11 @@ Esto establece el temporizador en relación con la última vez que la unidad aso
 ### OnCalendar
 Esto le permite activar la unidad asociada especificando un absoluto en lugar de relativo a un evento.
 ### AccuracySec
-Esta unidad se utiliza para establecer el nivel de precisión con el que se debe cumplir el temporizador. De forma predeterminada, la unidad asociada se activará dentro de un minuto después de que se alcance el temporizador. El valor de esta directiva determinará los límites superiores de la ventana en la que se systemdprograma la activación para que ocurra.
+Esta unidad se utiliza para establecer el nivel de precisión con el que se debe cumplir el temporizador. De forma predeterminada, la unidad asociada se activará dentro de un minuto después de que se alcance el temporizador. El valor de esta directiva determinará los límites superiores de la ventana en la que systemd programa la activación para que ocurra.
 ### Unit
-Esta directiva se utiliza para especificar la unidad que debe activarse cuando transcurre el temporizador. Si no está configurado, systemdbuscará una .serviceunidad con un nombre que coincida con esta unidad.
+Esta directiva se utiliza para especificar la unidad que debe activarse cuando transcurre el temporizador. Si no está configurado, systemd buscará una unidad .service con un nombre que coincida con esta unidad.
 ### Persistent
-Si está configurado, systemdactivará la unidad asociada cuando el temporizador se active si se hubiera activado durante el período en el que el temporizador estuvo inactivo.
+Si está configurado, systemd activará la unidad asociada cuando el temporizador se active si se hubiera activado durante el período en el que el temporizador estuvo inactivo.
 ### WakeSystem
 Establecer esta directiva le permite reactivar un sistema desde la suspensión si se alcanza el temporizador en ese estado.
 
@@ -114,9 +114,9 @@ Observa la ubicación de la ruta en busca de cambios. La unidad asociada se acti
 ### PathModified
 Esto observa cambios como la directiva anterior, pero se activa en las escrituras de archivos, así como cuando se cierra el archivo.
 ### DirectoryNotEmpty
-Esta directiva permite systemdactivar la unidad asociada cuando el directorio ya no está vacío.
+Esta directiva permite activar la unidad asociada cuando el directorio ya no está vacío.
 ### Unit
-Esto especifica la unidad que se activará cuando se cumplan las condiciones de ruta especificadas anteriormente. Si se omite, systemdbuscará un .servicearchivo que comparta el mismo nombre de unidad base que esta unidad.
+Esto especifica la unidad que se activará cuando se cumplan las condiciones de ruta especificadas anteriormente. Si se omite, systemd buscará un archivo .service que comparta el mismo nombre de unidad base que esta unidad.
 ### MakeDirectory
 Esto determina si systemdse creará la estructura de directorio de la ruta en cuestión antes de ver.
 ### DirectoryMode
@@ -139,6 +139,7 @@ Una lista de unidades que dependen débilmente de la unidad. Cuando esta unidad 
 Especifica una lista de unidades que se instalarán o desinstalarán junto con la unidad.
 
 ## Ejemplo de fichero
+### Plantilla de fichero de servicio
 [Unit]
 
 Description=service_description
