@@ -230,3 +230,5 @@ elif [[ $funcion_a_ejecutar == "parada_del_contenedor" ]];then
                             $carpeta_del_volumen_host \
                             $carpeta_backups
 fi
+
+### sudo ./contenedor.sh -S -c mi_nginx.conf
