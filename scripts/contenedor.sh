@@ -13,7 +13,7 @@ function asegurar_existencia_contenedor(){
     local carpeta_del_volumen_en_contenedor=$4
     local puertos=$5
 
-    local existe=$(sudo docker ps --all | grep -c $nombre_contenedor)
+    local existe=$( docker ps --all | grep -c $nombre_contenedor)
     
     if (( $existe == 0 ));then
         crear_el_contenedor \
@@ -176,6 +176,9 @@ do
         --stop|-S)
             funcion_a_ejecutar=parada_del_contenedor
         ;;
+        --restart|-r)
+            funcion_a_ejecutar=reinicio_del_contenedor
+        ;;
         --container-description-file|-c)
             fichero_configuracion=$2
             shift
@@ -230,6 +233,13 @@ elif [[ $funcion_a_ejecutar == "parada_del_contenedor" ]];then
                             $carpeta_del_volumen_host \
                             $carpeta_backups
 fi
-
-### sudo ./contenedor.sh -S -c mi_nginx.conf
-### sudo ./contenedor.sh -s -c mi_nginx.conf
+if [[ $funcion_a_ejecutar == "reinicio_del_contenedor" ]];then
+    parada_del_contenedor $nombre_contenedor \
+                            $carpeta_del_volumen_host \
+                            $carpeta_backups
+    arranque_del_contenedor $nombre_contenedor \
+                            $imagen_contenedor \
+                            $carpeta_del_volumen_host \
+                            $carpeta_del_volumen_en_contenedor \
+                            "$puertos"
+fi
