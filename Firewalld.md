@@ -296,6 +296,18 @@ $ firewall-cmd --zone = nombre-zona --list-all
 ```
 $ firewall-cmd --permanent --zone=zone-name --set-target =<default|ACCEPT|REJECT|DROP>
 ```
+### Eliminar interfaz de una zona
+```
+firewall-cmd --zone public --remove-interface eth1 --permanent
+```
+### Añadir interfaz de una zona
+```
+firewall-cmd --zone internal --add-interface eth1 --permanent
+```
+### Obtener la zona de un interfaz
+```
+firewall-cmd --get-zone-of-interface=eth1
+```
 
 ## Añadir un origen para una zona
 ```
@@ -335,8 +347,8 @@ $ firewall-cmd --zone = external --remove-masquerade --permanent
 ```
 ### Reenvio de puertos
 ```
-$ firewall-cmd --add-forward-port=port=número de puerto:proto=tcp|udp|sctp|dccp:toport=número de puerto
-$ firewall-cmd --remove-forward-port=port=número de puerto:proto= <tcp|udp>:toport=número de puerto:toaddr=<IP>
+$ firewall-cmd --add-forward-port = puerto = número de puerto: proto = tcp | udp | sctp | dccp: toport = número de puerto
+$ firewall-cmd --remove-forward-port = puerto = número de puerto: proto = <tcp | udp>: toport = número de puerto: toaddr = <IP>
 
 ```
 
