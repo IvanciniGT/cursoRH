@@ -140,6 +140,7 @@ Especifica una lista de unidades que se instalarán o desinstalarán junto con l
 
 ## Ejemplo de fichero
 ### Plantilla de fichero de servicio
+```
 [Unit]
 
 Description=service_description
@@ -167,3 +168,4 @@ RestartSec=42s
 [Install]
 
 WantedBy=default.target
+
