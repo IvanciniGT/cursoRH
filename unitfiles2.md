@@ -2,13 +2,17 @@
 ## Temporizador que se inicia 15 minutos después del arranque y después cada 2 dias mientras el sistema se está ejecutando.
 
 [Unit]
+
 Description=Me ejecuto cada 2 días y al arranque
 
 [Timer]
+
 OnBootSec=15min
+
 OnUnitActiveSec=2d
 
 [Install]
+
 WantedBy=timers.target
 
 ## Temporizadores con una fecha/hora fija
