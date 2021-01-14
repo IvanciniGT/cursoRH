@@ -122,3 +122,14 @@ fi
 # no dependa de variables globales
 asignar_configuracion_red $interfaz $ip $gateway $dns
 
+
+# Tener una configuración base INTERNAL
+# fichero internal.xml --> /etc/firewalld/zones
+#   ssh
+
+# Asignar la conexión a zona PUBLIC
+# Dar de alta servicios:
+#   template-> Mod Ansible firewalld --new-service
+#   --add-service# 
+#   generar un fichero de custom_fact
+#   subir el fichero a git
