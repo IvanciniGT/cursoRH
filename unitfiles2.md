@@ -1,6 +1,6 @@
 # Más plantillas de unit files
 ## Temporizador que se inicia 15 minutos después del arranque y después cada 2 dias mientras el sistema se está ejecutando.
-
+```
 [Unit]
 
 Description=Me ejecuto cada 2 días y al arranque
@@ -14,18 +14,21 @@ OnUnitActiveSec=2d
 [Install]
 
 WantedBy=timers.target
-
+```
 ## Temporizadores con una fecha/hora fija
-
+```
 [Unit]
+
 Description=Me ejecuto cada minuto
 
 [Timer]
+
 OnCalendar=*:0/1
 
 [Install]
-WantedBy=timers.target
 
+WantedBy=timers.target
+```
 ## Valores disponibles para OnCalendar
 
 El formato de la fecha es DiaDeLaSemana Año-Mes-Día Hora:Minuto:Segundo. 
